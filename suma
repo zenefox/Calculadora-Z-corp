@@ -1,0 +1,20 @@
+        String a;           // Se declara variable String a, para guardar primer termino ingresado por teclado
+        String b;           // Se declara variable String b, para guardar segundo termino ingresado por teclado
+        Double x;           // Se declara variable Double x, donde se guardara conversion de string a Double primer termino de la suma
+        Double y;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
+        Scanner teclado=new Scanner(System.in); // Se crea variable teclado que permite capturar lo que se ingresa por teclado
+        System.out.print("ingrese a: ");        // Se muestra por la terminal que se ingrese termino a de la suma
+        a=teclado.nextLine();                   // Se le asigna a la variable String a, lo ingresado por teclado
+        System.out.print("ingrese b: ");        // Se muestra por la terminal que se ingrese termino b de la suma
+        b=teclado.nextLine();                   // Se le asigna a la variable String b, lo ingresado por teclado
+        x=Double.parseDouble(a);                // Se convierte String a, a Double x
+        y=Double.parseDouble(b);                // Se convierte String b, a Double y
+        
+        System.out.println("La suma es: "+Sumar(x, y)); // Se imprime por pantalla, el resultado de la suma, por medio de la funcion Sumar
+        
+    }
+    
+    public static Double Sumar(Double x, Double y){  // Se declara la Funcion Sumar de tipo Double con dos parametros de entrada x e y
+        Double total;               // Se declara variable Double total para guardar el total de la suma de dos valores
+        total= x + y;               // Se le asigna a variable total la suma de los dos parametros de entrada
+        return total;               // Con el comando return, nuestra funcion Sumar, devolvera el resultado de la suma
