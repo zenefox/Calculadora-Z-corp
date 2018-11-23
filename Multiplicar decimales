@@ -1,0 +1,101 @@
+package proyectozcorpmultiplicar;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ProyectoZCorpMultiplicar {
+
+    
+    public static void main(String[] args) {
+        String NUM1 = null;
+        String NUM2 = null;
+        double x = 0;           // Se declara variable Double x, donde se guardara conversion de string a Double primer termino de la suma
+        double y = 0;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
+        Scanner teclado=new Scanner(System.in); // Se crea variable teclado que permite capturar lo que se ingresa por teclado
+        int i=0;
+        int j=0;
+        double resultado;
+        int n1;
+        int n2;
+        
+        double dec1Mult;
+        double dec2Mult;
+        double dec1;
+        double dec2;
+        double dec11;
+        double dec22;
+        double res1;
+        double res2;
+        double res3;
+        double res4;
+        double productoB;
+        double prodRes;
+        double productoFinal;
+        
+        
+            
+            
+            
+        
+        
+        while(i<1){                                 // primer while para volver a solicitar numero
+            System.out.print("ingrese a: ");         
+            
+            try{                                    // primer try para validar primer numero
+                x=teclado.nextDouble();             // se puede traspasar directamente a double lo ingresado por teclado
+                NUM1=teclado.nextLine();
+                i++;                                // incremento para salir del while
+            }catch(Exception e){
+                teclado.next();
+                System.out.println( "error");
+        }
+        }
+        
+        while(j<1){                                 // segundo while para volver a solicitar numero
+            System.out.print("ingrese b: ");        
+            
+            try{                                    // segundo try para validar primer numero
+                y=teclado.nextDouble();                
+                NUM2=teclado.nextLine();
+                j++; 
+            }catch(Exception e){
+                teclado.next();
+                System.out.println( "error");
+        }
+        }
+          
+        
+        dec1Mult=(double)x*10;
+        dec2Mult=(double)y*10;
+        
+        res2=Multiplicar(dec1Mult, dec2Mult);
+        res3=res2/100;
+        
+        BigDecimal bigDecimal = new BigDecimal(res3).setScale(2, RoundingMode.HALF_UP); //Codigo para aprox. resultado double
+        System.out.println("El producto es: "+bigDecimal.doubleValue()); // Se completa el codigo anterior para mostrar resultado aprox.        
+        
+        
+    } 
+       
+    
+    public static double Multiplicar(double x, double y){   // 2 x 3
+        double producto=0.0;
+        
+        for(int i=0;i<x;i++){
+            producto=producto+y;
+        }
+        return producto;
+        
+    }
+    
+    public static double redondea(double x){
+        BigDecimal resX; 
+        resX = new BigDecimal(x).setScale(12, BigDecimal.ROUND_HALF_DOWN); 
+        double resultadoX = resX.doubleValue();
+        //System.out.println(resultado);
+        return resultadoX;
+    }
+    
+}
