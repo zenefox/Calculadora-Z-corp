@@ -1,0 +1,25 @@
+          String a;           
+	        String b;           
+	        Double x;          
+	        Double y;           
+	        Scanner teclado=new Scanner(System.in); 
+	        System.out.print("ingrese un numero: ");        
+	        a=teclado.nextLine();                   
+	        System.out.print("ingrese otro numero: ");        
+	        b=teclado.nextLine();                  
+	        try{
+	        	x=Double.parseDouble(a); 
+	        	y=Double.parseDouble(b);
+	        }catch (NumberFormatException ex){
+	        	System.out.println("No es un numero");
+	        }
+	        }//falta un variante para que se lea que operatoria sera!
+	        
+	       // System.out.println("La suma es: "+Sumar(x, y)); 
+	      
+	    public static Double Sumar(Double x, Double y){   //funcion suma
+	        Double total;               
+	        total= x + y;               
+	        return total;               
+	}
+   

@@ -1,0 +1,56 @@
+package proyectozcorp;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ProyectoZCorp {
+    
+    public static void main(String[] args) {
+        
+        double x = 0;           // Se declara variable Double x, donde se guardara conversion de string a Double primer termino de la suma
+        double y = 0;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
+        Scanner teclado=new Scanner(System.in); // Se crea variable teclado que permite capturar lo que se ingresa por teclado
+        int i=0;
+        int j=0;
+        double total;
+        
+        
+        
+        while(i<1){                                 // primer while para volver a solicitar numero
+            System.out.print("ingrese a: ");         
+            
+            try{                                    // primer try para validar primer numero
+                x=teclado.nextDouble();             // se puede traspasar directamente a double lo ingresado por teclado
+                i++;                                // incremento para salir del while
+            }catch(Exception e){
+                teclado.next();
+                System.out.println( "error");
+        }
+        }
+        
+        while(j<1){                                 // segundo while para volver a solicitar numero
+            System.out.print("ingrese b: ");        
+            
+            try{                                    // segundo try para validar primer numero
+                y=teclado.nextDouble();                
+                j++; 
+            }catch(Exception e){
+                teclado.next();
+                System.out.println( "error");
+        }
+        }
+        total=Sumar(x, y);                          // se guarda resultado de funcion para codigo de abajo
+        BigDecimal bigDecimal = new BigDecimal(total).setScale(2, RoundingMode.HALF_UP); //Codigo para aprox. resultado double
+        System.out.println("La suma es: "+bigDecimal.doubleValue()); // Se completa el codigo anterior para mostrar resultado aprox.        
+        
+    }
+    
+
+    public static double Sumar(double x, double y){  // Se declara la Funcion Sumar de tipo Double con dos parametros de entrada x e y
+        double total;               // Se declara variable Double total para guardar el total de la suma de dos valores
+        total= x + y;               // Se le asigna a variable total la suma de los dos parametros de entrada
+        return total;
+    }
+}

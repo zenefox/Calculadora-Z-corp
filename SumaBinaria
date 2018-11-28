@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Sumabinaria {
+
+	public static void main(String[] args) {
+
+	//Declaracion de variables
+Scanner Entrada=new Scanner(System.in);
+String n1="",n2="";
+
+	//Se pide 1er numero binario
+System.out.print("Ingrese 1º numero ");
+n1=Entrada.next();
+
+	//Se pide 2do numero binario
+System.out.print("Ingrese 2º numero ");
+n2=Entrada.next();
+System.out.print("Su resultado es "+Suma(n1,n2));
+	}
+	
+
+	public static String Suma(String n1, String n2){
+	
+	//recibe y convierte numeros binarios
+int a1=Integer.parseInt(n1,2);
+int a2=Integer.parseInt(n2,2);
+
+	//Realiza calculo
+int c=a1+a2;
+
+	//Convierte resultado de la operacion en String
+String Result=Integer.toString(c,2);
+return Result; 
+
+}}
