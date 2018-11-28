@@ -42,14 +42,16 @@ public class CalculadoraMenuTerminal {
             System.out.println("2. Operaciones binarias");
             System.out.println("3. Orden de datos");
             System.out.println("4. Promedios");
-            System.out.println("5. Acerca");
+            System.out.println("5. Acerca");// muestra información acerca de quien realizo el trabajo y email de contacto.
             System.out.println("6. Salir \n");
  
             try {
             	
                 System.out.println("Ingrese una opción \n");
                 opcion = sn.nextInt();
- 
+                
+ //menu general de la calculadora
+                
                 switch (opcion) {
                     case 1:
                         System.out.println("Has seleccionado Operaciones matemáticas \n");
@@ -77,12 +79,12 @@ public class CalculadoraMenuTerminal {
                 sn.next();
             }
         
-        
+ // menu de la sección de operaciones matemáticas       
         while (!regresar) {
         
         System.out.println("1. Suma");
         System.out.println("2. Resta");
-        System.out.println("3. Mltiplicación");
+        System.out.println("3. Multiplicación");
         System.out.println("4. División");
         System.out.println("5. Regresar \n");
         
@@ -106,7 +108,7 @@ public class CalculadoraMenuTerminal {
                     System.out.println("Has seleccionado División \n");
                     break;
                 case 5:
-                    regresar = true;
+                    regresar = true; //opción que nos devuelve al menu anterior
                     break;
                 default:
                     System.out.println("\nSeleccione una opción entre 1 y 5 \n");
